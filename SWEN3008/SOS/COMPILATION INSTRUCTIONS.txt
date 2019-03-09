@@ -1,0 +1,7 @@
+
+================================
+STEPS TO COMPILE THE APPLICATION
+================================
+
+1. Install Cordova
+2. In this directory run the command: cordova build android

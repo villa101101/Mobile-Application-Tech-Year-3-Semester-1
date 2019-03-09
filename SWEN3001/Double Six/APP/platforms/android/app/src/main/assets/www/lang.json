@@ -1,0 +1,44 @@
+{
+    "english":{
+        "home":{
+            "title": "Double Six"
+        }
+    },
+    "chinese":{
+        "signIn":{
+
+        },
+        "home":{
+            "title": "双六",
+            "menu":{
+                "createGame": "创建游戏",
+                "search":"搜索",
+                "disconnect":"断开",
+                "refresh":"刷新",
+                "exit":"离开"
+            },
+            "tabs":{
+                "LobbyTab":{
+                    "title":"前厅",
+                    "noGames":"没有游戏可用"
+                },
+                "walletTab":{
+                    "title": "钱包",
+                    "topUpBtn": "充值",
+                    "withdrawBtn": "退出"
+                    
+                },
+                "minerTab":{
+                    "title": "矿工",
+                    "tapMine": "点击开始采矿",
+                    "yourBuc": "你的水桶",
+                    "pocket":"口袋",
+                    "miningInfoPrompt":{
+                        "title":"挖掘信息",
+                        "body":"欢迎来到双六矿工。 不要指望从中赚到数百万，但挖掘工作是累积的！ 通过告诉别人我的收益来更快地赚取支出"
+                    }
+                }
+            }
+        }
+    }
+}

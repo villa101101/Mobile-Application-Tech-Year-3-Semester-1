@@ -1,0 +1,82 @@
+{
+  "cordova-plugin-whitelist": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-whitelist@1"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "phonegap-plugin-barcodescanner": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/phonegap/phonegap-plugin-barcodescanner.git"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-x-toast": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-x-toast"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-dialogs": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-dialogs"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-statusbar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-statusbar@2.4.2"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-headercolor": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-headercolor"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-connectivity-monitor": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-connectivity-monitor"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-play-services-version-adapter": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-play-services-version-adapter"
+    },
+    "is_top_level": false,
+    "variables": {}
+  },
+  "cordova-admob": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-admob"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "nl.madebymark.share": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-share"
+    },
+    "is_top_level": true,
+    "variables": {}
+  }
+}

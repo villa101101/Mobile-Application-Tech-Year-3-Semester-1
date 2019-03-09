@@ -1,0 +1,4 @@
+#Thu Dec 13 23:04:57 CST 2018
+base.0=C\:\\Users\\cuted\\Documents\\BitBucket\\SWEN UPDATE\\SWEN3001\\SWEN3008\\SOS\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

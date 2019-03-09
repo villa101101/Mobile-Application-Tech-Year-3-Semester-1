@@ -1,0 +1,146 @@
+CREATE DATABASE doublesix;
+
+USE doublesix;
+
+
+CREATE TABLE accounts(
+    aid INT(11) NOT NULL AUTO_INCREMENT,
+    eml VARCHAR(255) NOT NULL, 
+    usrname VARCHAR(12) NOT NULL,
+    offset FLOAT(10) DEFAULT 0,
+    bot INT(1) DEFAULT 0;
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    UNIQUE (usrname),
+    PRIMARY KEY (aid)
+);
+
+
+CREATE TABLE sessions (
+    sid INT(11) NOT NULL AUTO_INCREMENT,
+    aid INT(11) NOT NULL,
+    tkn VARCHAR(255),
+    data TEXT,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (aid) REFERENCES accounts (aid),
+    UNIQUE(tkn),
+    PRIMARY KEY (sid)
+);
+
+
+CREATE TABLE pendingLogins (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    eml VARCHAR(255) NOT NULL,
+    tkn VARCHAR(64) NOT NULL,
+    acptd INT(1) NOT NULL DEFAULT 0,
+    sesid VARCHAR(255) NOT NULL,
+    sestkn VARCHAR(255) NOT NULL,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    UNIQUE(eml),
+    UNIQUE(tkn),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE games(            
+    gid INT(11) NOT NULL AUTO_INCREMENT,
+    aid INT(11) NOT NULL,
+    nme VARCHAR(255) NOT NULL,
+    pwd VARCHAR(255) NOT NULL,
+    fee FLOAT(10) NOT NULL,
+    canjoin INT(1) NOT NULL DEFAULT 1,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    UNIQUE(nme),
+    FOREIGN KEY (aid) REFERENCES accounts (aid),
+    PRIMARY KEY (gid)  
+);
+
+CREATE TABLE participants(
+    pid INT(11) NOT NULL AUTO_INCREMENT,
+    sid INT(11) NOT NULL,
+    aid INT(11) NOT NULL,
+    gid INT(11) NOT NULL,
+    gain FLOAT(10) NOT NULL DEFAULT 0,
+    con INT(1) NOT NULL DEFAULT 0,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (sid) REFERENCES sessions (sid),
+    FOREIGN KEY (aid) REFERENCES accounts (aid),
+    FOREIGN KEY (gid) REFERENCES games (gid),
+    UNIQUE(sid),
+    UNIQUE(aid, gid),
+    PRIMARY KEY (pid)     
+);
+
+/*FIX ERROR WHERE USER JOINS GAME THEY ALREADY JOINED*/
+CREATE TABLE rounds(
+    rid INT(11) NOT NULL AUTO_INCREMENT,
+    rnd INT(11) NOT NULL DEFAULT 0,
+    gid INT(11) NOT NULL,
+    pid INT(11) NOT NULL,
+    aid INT(11) NOT NULL,
+    d1 INT(1) NOT NULL,
+    d2 INT(1) NOT NULL,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (pid) REFERENCES participants (pid),
+    FOREIGN KEY (aid) REFERENCES accounts (aid),
+    FOREIGN KEY (gid) REFERENCES games (gid),
+    UNIQUE(rnd, pid),
+    PRIMARY KEY (rid)
+);
+
+CREATE TABLE gamelog(
+    logid INT(11) NOT NULL AUTO_INCREMENT,
+    gid INT(11) NOT NULL,
+    aid INT(11) NOT NULL,
+    nme VARCHAR(255) NOT NULL, 
+    fee FLOAT(10) NOT NULL, 
+    rnd INT(11) NOT NULL,
+    d1 INT(1) NOT NULL,
+    d2 INT(1) NOT NULL,  
+    gain FLOAT(10) NOT NULL DEFAULT 0,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,  
+    PRIMARY KEY (logid)
+);
+
+
+CREATE TABLE pendingOrders(
+    ord_id INT(11) NOT NULL AUTO_INCREMENT,
+    aid INT(11) NOT NULL,
+    ctkn VARCHAR(255) NOT NULL,
+    vq FLOAT(10) NOT NULL,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (aid) REFERENCES accounts (aid),
+    PRIMARY KEY(ord_id)
+);
+
+CREATE TABLE transactions(
+    tid INT(11) NOT NULL AUTO_INCREMENT,
+    aid INT(11) NOT NULL,
+    vq FLOAT(10) NOT NULL,
+    ppal INT(1) NOT NULL DEFAULT 0,
+    buy INT(1) NOT NULL DEFAULT 0,
+    sell INT(1) NOT NULL DEFAULT 0,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (aid) REFERENCES accounts (aid),    
+    PRIMARY KEY (tid)
+);
+
+/*TABLE SHOWING VQ RECEIVED FROM THE SERVER AND POCKETS MADE*/
+CREATE TABLE minerTransactions(
+    mtid INT(11) NOT NULL AUTO_INCREMENT,
+    aid INT(11) NOT NULL,
+    vq FLOAT(10) NOT NULL,
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
+    FOREIGN KEY (aid) REFERENCES accounts (aid),    
+    PRIMARY KEY (mtid)
+);
+
+
+/*
+CREATE TABLE comments(
+    cid INT(11) NOT NULL,
+    aid INT(11) NOT NULL,
+    txt VARCHAR(100) NOT NULL,
+    gid INT(1) NOT NULL,
+    FOREIGN KEY (aid) REFERENCES accounts (aid),
+    FOREIGN KEY (gid) REFERENCES games (gid),
+    PRIMARY KEY(cid)
+);*/

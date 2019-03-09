@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <title>Product Seeker</title>
+    </head>
+    <body style="overflow: hidden;">
+        <div class="app" style="display: none;">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+        <!-- section for the home page -->
+        <div id="home" data-role="page">
+            
+        </div>
+        <!-- section for the results page -->
+        <div id="results" data-role="page">
+
+        </div>
+        <!-- section for the details page -->
+        <div id="details" data-role="page">
+
+        </div>
+
+        
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/JsBarcode.all.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>      
+        
+        <script src="js/screens/home.js"></script>
+        <script src="js/screens/results.js"></script>
+        <script src="js/screens/details.js"></script>
+
+        <script>
+            $.ajax({
+                "url":"https://www.gstatic.com/firebasejs/5.5.6/firebase.js",
+                "type":"get",
+                "success": function(response){
+                    eval(response);
+                    console.log(response);
+                }
+            });
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyApEVKwh865F6DcUflUU-g1n3AqapXGPgs",
+                authDomain: "product-wizard.firebaseapp.com",
+                databaseURL: "https://product-wizard.firebaseio.com",
+                projectId: "product-wizard",
+                storageBucket: "product-wizard.appspot.com",
+                messagingSenderId: "881670423061"
+            };           
+            // Initialize Firebase
+
+            firebase.initializeApp(config);
+
+            const queryDatabase = function(path){
+                //TAKES AN ARRAY OF THE PATH TO THE DESIRED TABLE AS A PARAMETER
+                return new Promise(function(resolve, reject){
+                    var db = firebase.database();
+                    path = path.join('/');
+                    var data = db.ref(path);
+                    data.on('value', function(response){
+                        resolve(response.val());
+                    });
+                });
+            }
+
+            const writeDatabase = function(path, data){
+                return new Promise(function(resolve, reject){
+                    var db = firebase.database();
+                    path = path.join('/');
+                    db.ref(path).set(data);
+                    resolve(true);
+                });
+            }          
+        </script>        
+    </body>
+
+
+</html>

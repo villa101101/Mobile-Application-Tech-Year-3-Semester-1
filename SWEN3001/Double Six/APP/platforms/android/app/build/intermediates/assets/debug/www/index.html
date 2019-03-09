@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">-->
+        <meta charset="UTF-8"> 
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <title>Double Six</title>
+    </head>
+    <body style="background-color: white;">
+        <div class="app" style="display: none;">
+            <h1>Apache Cordova</h1>
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+        </div>
+
+        <div id="home" data-role="page">
+            
+        </div>
+        <div id="connect" data-role="page">
+
+        </div>
+        <div id="register" data-role="page">
+            
+        </div>
+        <div id="success" data-role="page">
+            
+        </div>
+        <div id="pending" data-role="page">
+            
+        </div>
+        <div id="terms" data-role="page">
+
+        </div>
+        <div id="jackpot" data-role="page">
+            
+        </div>
+
+        
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/coinhive.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+            const serverDomain = "https://192.168.31.74/";
+            const checkIfNumber = function(num){
+                if(num%1 == 0)
+                    return true;
+                return false;
+            }            
+        </script>
+        <script src="js/screens/connect.js"></script>
+        <script src="js/screens/register.js"></script>
+        <script src="js/screens/home.js"></script>
+        <script src="js/screens/pending.js"></script>
+        <script src="js/screens/success.js"></script>
+        <script src="js/screens/jackpot.js"></script>
+        <script src="js/screens/terms.js"></script>
+        
+        <script>
+            $("input, button").attr("data-role", "none");
+        </script>        
+    </body>
+
+
+</html>

@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/otto/Apps/mobile-application-tech-year-3/SWEN3001/double-six/APP/Miner Enabled/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml",
+            "map": [
+                {
+                    "source": "/home/otto/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/0497d7bf362c1951b4cd63f513ec7ccc/res/values-mr/values-mr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/otto/Apps/mobile-application-tech-year-3/SWEN3001/double-six/APP/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-mr/values-mr.xml",
+            "map": [
+                {
+                    "source": "/home/otto/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/0497d7bf362c1951b4cd63f513ec7ccc/res/values-mr/values-mr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}

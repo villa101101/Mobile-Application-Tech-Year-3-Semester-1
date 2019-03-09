@@ -1,0 +1,4 @@
+#Sun Dec 09 08:18:56 EST 2018
+base.0=/home/otto/Apps/mobile-application-tech-year-3/SWEN3001/double-six/APP/Miner Enabled/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+file.0=/home/otto/Apps/mobile-application-tech-year-3/SWEN3001/double-six/APP/Miner Enabled/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex

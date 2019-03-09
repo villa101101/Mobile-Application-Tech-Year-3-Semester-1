@@ -1,0 +1,71 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    background-color: #2196F3;
+    padding: 10px;
+
+  }
+
+  .grid-item {
+    background-color: #81dbeb;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    /* padding: 10px; */
+    font-size: 10px;
+    text-align: center;
+    padding: 12px 0 12px 0;
+    width : auto;
+    height : 2%;
+  }
+
+  .grid-item p{
+    position: absolute;
+    margin: -5px 0 0 20px;
+
+  }
+
+  .nospace {
+      padding: 0;
+      margin: 0;
+  }
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
