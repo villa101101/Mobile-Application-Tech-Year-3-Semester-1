@@ -34,7 +34,8 @@
             "nl.madebymark.share": {}
         },
         "platforms": [
-            "android"
+            "android",
+            "ios"
         ]
     }
 }
